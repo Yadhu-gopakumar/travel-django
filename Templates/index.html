@@ -10,13 +10,13 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="description" content="Travello template project">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap4/bootstrap.min.css'%}">
-	<link href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css'%}" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap4/bootstrap.min.css' %}">
+	<link href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.theme.default.css'%}">
-	<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/animate.css'%}">
-	<link rel="stylesheet" type="text/css" href="{% static 'styles/about.css'%}">
-	<link rel="stylesheet" type="text/css" href="{% static 'styles/about_responsive.css'%}">
+	<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.theme.default.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/animate.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'styles/about.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'styles/about_responsive.css' %}">
 </head>
 
 <body>
@@ -34,14 +34,14 @@
 								<div class="logo"><a href="index.html">Travello</a></div>
 								<nav class="main_nav">
 									<ul class="d-flex flex-row align-items-start justify-content-start">
-										<li class="active"><a >Home</a></li>
-										<li ><a style="color: white;">About us</a></li>
+										<li class="active"><a>Home</a></li>
+										<li><a style="color: white;">About us</a></li>
 										<li><a style="color: white;">Contact</a></li>
 
 										{% if user.is_authenticated %}
-										<li><a style="color: white;">Hi {{user.username}}</a></li>									
+										<li><a style="color: white;">Hi {{user.username}}</a></li>
 										<li><a style="color: white;" id="logout">logout</a></li>
-										
+
 										{% else %}
 										<li><a href="/credentials/register">Register</a></li>
 										<li><a href="/credentials/login">Login</a></li>
@@ -88,13 +88,13 @@
 			</div>
 			<div class="menu_content">
 				<ul>
-					<li><a style="color: black;"class="active">Home</a></li>
-					<li ><a style="color: black;">About us</a></li>
+					<li><a style="color: black;" class="active">Home</a></li>
+					<li><a style="color: black;">About us</a></li>
 					<li><a style="color: black;">Contact</a></li>
 
 					{% if user.is_authenticated %}
-					<li><a >Hi {{user.username}}</a></li>
-					<li><a  id="logout">logout</a></li>
+					<li><a>Hi {{user.username}}</a></li>
+					<li><a id="logout">logout</a></li>
 
 					{% else %}
 					<li><a href="/credentials/register">Register</a></li>
@@ -119,7 +119,7 @@
 		<!-- Home -->
 
 		<div class="home">
-			<div class="background_image" style="background-image:url(static/images/about.jpg )"></div>
+			<div class="background_image" style="background-image:url(static/images/about.jpg)"></div>
 		</div>
 
 		<!-- Search -->
@@ -198,7 +198,7 @@
 					<!-- Milestone -->
 					<div class="col-lg-3 milestone_col">
 						<div class="milestone text-center">
-							<div class="milestone_icon"><img src="static/images/mountain.svg" alt=""></div>
+							<div class="milestone_icon"><img src="{% static 'images/mountain.svg' %}" alt=""></div>
 							<div class="milestone_counter" data-end-value="17">0</div>
 							<div class="milestone_text">Online Courses</div>
 						</div>
@@ -237,9 +237,10 @@
 
 		<!-- Why Choose Us -->
 
-		<div class="why">
+		<div class="why" style="height: fit-content;position: relative;">
 			<div class="parallax_background parallax-window" data-parallax="scroll"
-				data-image-src="static/images/why.jpg" data-speed="0.8"></div>
+				data-image-src="static/images/why.jpg" data-speed="0.8">
+			</div>
 			<div class="container">
 				<div class="row">
 					<div class="col text-center">
@@ -249,10 +250,10 @@
 						</div>
 					</div>
 				</div>
-				<div class="row why_row ">
+				<div class="row why_row " style="display:flex ; height:fit-content; ">
 					{% for i in res %}
 					<!-- Why item -->
-					<div class="col-lg-3 why_col my-4 mx-5 card px-0">
+					<div class="col-lg-3 why_col mb-b mx-5 card px-0" style="height:fit-content;">
 						<div class="why_item">
 							<div class="why_image">
 								<img src='{{i.img.url}}' alt='{{i.img.url}}'>
@@ -260,9 +261,9 @@
 									<img src="static/images/why_1.svg" alt="">
 								</div>
 							</div>
-							<div class="why_content text-center bg">
-								<div class="why_title">{{i.name}}</div>
-								<div class="why_text">
+							<div class="why_content text-center bg p-0" style="height: fit-content;">
+								<div class="why_title" >{{i.name}}</div>
+								<div class="why_text" >
 									<p>{{i.desc}}
 								</div>
 							</div>
@@ -275,7 +276,7 @@
 		</div>
 		<!-- Team -->
 
-		<div class="team">
+		<div class="team" style="background-color: transparent;position: relative;">
 			<div class="container">
 				<div class="row">
 					<div class="col text-center">
@@ -285,7 +286,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="row team_row">
+				<div class="row team_row" style="background-color: transparent;">
 
 					<!-- Team Item -->
 					{% for i in rev %}
@@ -426,7 +427,7 @@
 			let option = confirm('are you really want to logout?')
 
 			if (option) {
-				
+
 				window.location.href = '/credentials/logout';
 			}
 			else {
